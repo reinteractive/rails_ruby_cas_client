@@ -1,0 +1,9 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% if session[:cas_user] %>
+  Hello, <%= session[:cas_user] %>!<br />
+  <%= link_to("Logout", logout_path) %>
+<% else %>
+  <%= link_to("Login", CASClient::Frameworks::Rails::Filter.client.login_url) %>
+<% end %>
